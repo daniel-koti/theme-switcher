@@ -1,0 +1,91 @@
+:root {
+  --primary-color: #292C35;
+  --secondary-color: #F1F1F1;
+  --text-color: #111
+}
+
+.light {
+  --primary-color: #F1F1F1;
+  --secondary-color: #292C35;
+  --text-color: #ddd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+}
+
+.switch-component {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 235px;
+  height: 102px;
+  background-color: #000;
+  border-radius: 60px;
+}
+
+.switch-component button {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 3%;
+  width: 86.31px;
+  height: 86.31px;
+  border-radius: 50%;
+  border: none;
+
+  animation: slide-back 0.4s;
+}
+.light .switch-component button {
+  animation: slide-right 0.4s forwards;
+}
+
+.switch-component span {
+  width: 94px;
+  height: 94px;
+  background-image: url(../assets/sun.svg);
+  background-repeat: no-repeat;
+}
+
+.switch-component span:last-child {
+  width: 94px;
+  height: 94px;
+  background-image: url(../assets/moon.svg);
+  background-repeat: no-repeat;
+}
+
+/* light mode */
+
+@keyframes slide-right {
+  from {
+    left: 3%;
+  }
+
+  to {
+    left: 60%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 60%
+  }
+
+  to {
+    left: 3%;
+  }
+}
